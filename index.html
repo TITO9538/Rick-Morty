@@ -26,123 +26,151 @@
       }
     </style>
     <script>
-      // Activamos modo dark manual (clase)
       tailwind.config = {
-        darkMode: 'class',
+        darkMode: "class",
       };
     </script>
   </head>
-
-  <body class="h-screen bg-slate-100 dark:bg-slate-900">
-    <nav class="flex justify-between items-center bg-slate-700/50 p-4 text-white fixed top-0 w-full z-50">
-      <div id="logo" class="flex items-center">
-        <img
-          onclick="toggleDarkMode()"
-          src="./imagenes/Rick_Morty_Logo.gif"
-          alt="Rick and Morty Logo"
-          class="w-16 h-16 rounded-full object-cover drop-shadow-[0_0_20px_green]" />
-      </div>
-      <div>
-        <img src="./imagenes/Rick_and_Morty_Logo.png" alt="Rick and Morty Title" class="h-14" />
-      </div>
-      <div class="relative hover:bg-slate-700 rounded-md p-[5px]">
-        <div id="boton-drop" class="cursor-pointer">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke-width="1.5"
-            stroke="currentColor"
-            class="w-11 h-11">
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-          </svg>
-        </div>
-        <div
-          id="dropdown"
-          class="z-10 hidden absolute right-0 mt-2 w-44 bg-white rounded-lg shadow-lg divide-y divide-gray-100 dark:bg-gray-700">
-          <ul
-            class="py-2 text-sm text-gray-700 dark:text-gray-200"
-            aria-labelledby="dropdownDefaultButton"
-            id="listado-clases">
-            <li>
-              <a
-                href="#"
-                class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                >Dashboard</a
-              >
-            </li>
-            <li>
-              <a
-                href="#"
-                class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                >Settings</a
-              >
-            </li>
-            <li>
-              <a
-                href="#"
-                class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                >Earnings</a
-              >
-            </li>
-            <li>
-              <a
-                href="#"
-                class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                >Sign out</a
-              >
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+  <body>
     <header
-      class="relative w-full h-[500px] bg-cover bg-center bg-fixed"
-      style="background-image: url('./imagenes/Rick_Morty_background.jpeg')">
-      <div class="absolute inset-0 bg-[#1f07f5] bg-opacity-100 mix-blend-overlay z-10"></div>
+      class="relative w-full h-[500px] bg-cover bg-center bg-fixed bg-[url('./imagenes/edwin.jpg')] dark:bg-[url('./imagenes/hero.jpeg')]"
+    >
+      <nav
+        class="flex justify-between items-center bg-slate-700/50 p-4 text-white fixed top-0 w-full z-50"
+      >
+        <div id="logo" class="flex items-center">
+          <img
+            onclick="toggleDarkMode()"
+            src="./imagenes/Rick_Morty_Logo.gif"
+            alt="Rick and Morty Logo"
+            class="w-16 h-16 rounded-full object-cover drop-shadow-[0_0_20px_green]"
+          />
+        </div>
+        <div>
+          <img
+            src="./imagenes/Rick_and_Morty_Logo.png"
+            alt="Rick and Morty Title"
+            class="h-14"
+          />
+        </div>
+        <div class="relative hover:bg-slate-700 rounded-md p-[5px]">
+          <div id="boton-drop" class="cursor-pointer">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-11 h-11"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+              />
+            </svg>
+          </div>
+          <div
+            id="dropdown"
+            class="z-10 hidden absolute right-0 mt-2 w-44 bg-white rounded-lg shadow-lg divide-y divide-gray-100 dark:bg-gray-700"
+          >
+            <ul
+              class="py-2 text-sm text-gray-700 dark:text-gray-200"
+              aria-labelledby="dropdownDefaultButton"
+              id="listado-clases"
+            >
+              <li>
+                <a
+                  href="#"
+                  class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                  >Dashboard</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                  >Settings</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                  >Earnings</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                  >Sign out</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
       <div
-        class="relative z-20 h-full flex flex-col items-center justify-center text-center text-white px-4 shadow-2xl">
-        <h1 class="text-5xl font-bold drop-shadow-md">Rick y Morty - Dimensiones Caóticas</h1>
+        class="absolute inset-0 bg-[#1f07f5] bg-opacity-100 mix-blend-overlay z-10"
+      ></div>
+      <div
+        class="relative z-20 h-full flex flex-col items-center justify-center text-center text-white px-4 shadow-2xl"
+      >
+        <h1 class="text-5xl font-bold drop-shadow-md">
+          Rick y Morty - Dimensiones Caóticas
+        </h1>
         <p class="mt-4 text-lg max-w-xl drop-shadow-sm">
-          Acompaña a Rick y Morty en sus aventuras interdimensionales llenas de ciencia loca,
-          peligros galácticos y humor fuera de este mundo.
+          Acompaña a Rick y Morty en sus aventuras interdimensionales llenas de
+          ciencia loca, peligros galácticos y humor fuera de este mundo.
         </p>
       </div>
 
       <div class="absolute bottom-0 w-full h-[180px] overflow-hidden z-10">
-        <svg class="w-full h-full" viewBox="0 0 1440 320" preserveAspectRatio="none">
+        <svg
+          class="w-full h-full"
+          viewBox="0 0 1440 320"
+          preserveAspectRatio="none"
+        >
           <path
             fill="white"
             fill-opacity="0.3"
-            d="M0,256L60,229.3C120,203,240,149,360,144C480,139,600,181,720,197.3C840,213,960,203,1080,186.7C1200,171,1320,149,1380,138.7L1440,128V320H1380C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320H0Z"></path>
+            d="M0,256L60,229.3C120,203,240,149,360,144C480,139,600,181,720,197.3C840,213,960,203,1080,186.7C1200,171,1320,149,1380,138.7L1440,128V320H1380C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320H0Z"
+          ></path>
         </svg>
       </div>
     </header>
-    <main class="w-full flex items-center justify-center">
+    <hr class="border-2 border-blue-400 m-1" />
+    <main
+      class="bg-white/70 dark:bg-blue-800/70 w-full flex items-center justify-center"
+    >
       <section
-        class="w-[85%] bg-slate-200 dark:bg-slate-800 rounded-xl flex flex-col items-center justify-center m-5 p-3">
-        <!-- TITULO -->
-        <h3 class="text-xl md:text-2xl xl:text-4xl md:font-extrabold text-center font-bold uppercase text-slate-800 dark:text-slate-300 p-5">
+        class="w-[85%] bg-blue-300 dark:bg-slate-800 rounded-xl flex flex-col items-center justify-center m-5 p-3"
+      >
+        <h3
+          class="text-xl md:text-2xl xl:text-4xl md:font-extrabold text-center font-bold uppercase text-slate-800 dark:text-slate-300 p-5"
+        >
           Listado de Todos los Personajes
         </h3>
-        <!-- Personajes -->
+
         <div
           id="contenedor-cards"
-          class="w-[90%] flex flex-col items-center justify-center md:flex-row md:flex-wrap m-5 gap-3">
+          class="w-[90%] flex flex-col items-center justify-center md:flex-row md:flex-wrap md:grid grid-cols-3 m-5 gap-3"
+        >
           <article
-            class="flex flex-col sm:flex-row text-slate-100 bg-slate-700 rounded-md m-3 shadow-xl/50 md:w-100">
+            class="flex flex-col sm:flex-row text-slate-100 bg-slate-700 rounded-md m-3 shadow-xl/50 md:w-100"
+          >
             <div class="flex items-center justify-center md:h-50">
               <img
                 src="https://m.media-amazon.com/images/S/aplus-media-library-service-media/365e5edb-7b7f-415a-81c7-a848936e9e38.__CR0,0,300,300_PT0_SX300_V1___.jpg"
                 alt="Imagen del Articulo"
-                class="w-full h-full md:max-w-50 md:max-h-50 object-cover rounded-md" />
+                class="w-full h-full md:max-w-50 md:max-h-50 object-cover rounded-md"
+              />
             </div>
             <div class="flex flex-col p-2 gap-1">
               <h2
-                class="text-2xl font-extrabold text-slate-100 hover:text-orange-500 bg-clip-text hover:drop-shadow-[0_0_30px_orange] pb-2">
+                class="text-2xl font-extrabold text-slate-100 hover:text-orange-500 bg-clip-text hover:drop-shadow-[0_0_30px_orange] pb-2"
+              >
                 Nombre:
               </h2>
               <p class="font-medium text-slate-300">Estado:</p>
@@ -150,16 +178,19 @@
             </div>
           </article>
           <article
-            class="flex flex-col sm:flex-row text-slate-100 bg-slate-700 rounded-md m-3 shadow-xl/50 md:w-100">
+            class="flex flex-col sm:flex-row text-slate-100 bg-slate-700 rounded-md m-3 shadow-xl/50 md:w-100"
+          >
             <div class="flex items-center justify-center md:h-50">
               <img
                 src="https://m.media-amazon.com/images/S/aplus-media-library-service-media/365e5edb-7b7f-415a-81c7-a848936e9e38.__CR0,0,300,300_PT0_SX300_V1___.jpg"
                 alt="Imagen del Articulo"
-                class="w-full h-full md:max-w-50 md:max-h-50 object-cover rounded-md" />
+                class="w-full h-full md:max-w-50 md:max-h-50 object-cover rounded-md"
+              />
             </div>
             <div class="flex flex-col p-2 gap-1">
               <h2
-                class="text-2xl font-extrabold text-slate-100 hover:text-orange-500 bg-clip-text hover:drop-shadow-[0_0_30px_orange] pb-2">
+                class="text-2xl font-extrabold text-slate-100 hover:text-orange-500 bg-clip-text hover:drop-shadow-[0_0_30px_orange] pb-2"
+              >
                 Nombre:
               </h2>
               <p class="font-medium text-slate-300">Estado:</p>
@@ -167,16 +198,19 @@
             </div>
           </article>
           <article
-            class="flex flex-col sm:flex-row text-slate-100 bg-slate-700 rounded-md m-3 shadow-xl/50 md:w-100">
+            class="flex flex-col sm:flex-row text-slate-100 bg-slate-700 rounded-md m-3 shadow-xl/50 md:w-100"
+          >
             <div class="flex items-center justify-center md:h-50">
               <img
                 src="https://m.media-amazon.com/images/S/aplus-media-library-service-media/365e5edb-7b7f-415a-81c7-a848936e9e38.__CR0,0,300,300_PT0_SX300_V1___.jpg"
                 alt="Imagen del Articulo"
-                class="w-full h-full md:max-w-50 md:max-h-50 object-cover rounded-md" />
+                class="w-full h-full md:max-w-50 md:max-h-50 object-cover rounded-md"
+              />
             </div>
             <div class="flex flex-col p-2 gap-1">
               <h2
-                class="text-2xl font-extrabold text-slate-100 hover:text-orange-500 bg-clip-text hover:drop-shadow-[0_0_30px_orange] pb-2">
+                class="text-2xl font-extrabold text-slate-100 hover:text-orange-500 bg-clip-text hover:drop-shadow-[0_0_30px_orange] pb-2"
+              >
                 Nombre:
               </h2>
               <p class="font-medium text-slate-300">Estado:</p>
@@ -184,16 +218,19 @@
             </div>
           </article>
           <article
-            class="flex flex-col sm:flex-row text-slate-100 bg-slate-700 rounded-md m-3 shadow-xl/50 md:w-100">
+            class="flex flex-col sm:flex-row text-slate-100 bg-slate-700 rounded-md m-3 shadow-xl/50 md:w-100"
+          >
             <div class="flex items-center justify-center md:h-50">
               <img
                 src="https://m.media-amazon.com/images/S/aplus-media-library-service-media/365e5edb-7b7f-415a-81c7-a848936e9e38.__CR0,0,300,300_PT0_SX300_V1___.jpg"
                 alt="Imagen del Articulo"
-                class="w-full h-full md:max-w-50 md:max-h-50 object-cover rounded-md" />
+                class="w-full h-full md:max-w-50 md:max-h-50 object-cover rounded-md"
+              />
             </div>
             <div class="flex flex-col p-2 gap-1">
               <h2
-                class="text-2xl font-extrabold text-slate-100 hover:text-orange-500 bg-clip-text hover:drop-shadow-[0_0_30px_orange] pb-2">
+                class="text-2xl font-extrabold text-slate-100 hover:text-orange-500 bg-clip-text hover:drop-shadow-[0_0_30px_orange] pb-2"
+              >
                 Nombre:
               </h2>
               <p class="font-medium text-slate-300">Estado:</p>
@@ -202,11 +239,19 @@
           </article>
         </div>
         <!-- Botones de siguiente y atras -->
-        <div class="w-full flex justify-between items-center text-slate-900 dark:text-slate-200">
-          <button id="ant" class="text-sm bg-indigo-300 dark:bg-indigo-900 rounded-md p-1 px-3 shadow-xl/30">
+        <div
+          class="w-full flex justify-between items-center text-slate-900 dark:text-slate-200"
+        >
+          <button
+            id="ant"
+            class="text-sm bg-indigo-300 dark:bg-indigo-900 rounded-md p-1 px-3 shadow-xl/30"
+          >
             Atras
           </button>
-          <button id="sig" class="text-sm bg-indigo-300 dark:bg-indigo-900 rounded-md p-1 px-3 shadow-xl/30">
+          <button
+            id="sig"
+            class="text-sm bg-indigo-300 dark:bg-indigo-900 rounded-md p-1 px-3 shadow-xl/30"
+          >
             Siguiente
           </button>
         </div>
@@ -224,7 +269,7 @@
     </div>
     <script>
       function toggleDarkMode() {
-        document.documentElement.classList.toggle('dark');
+        document.documentElement.classList.toggle("dark");
       }
     </script>
   </body>
