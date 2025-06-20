@@ -23,13 +23,13 @@ function renderizarPersonajes(personajes) {
                  " Desconocido";
 
     contenedor.innerHTML += `
-      <div class="card flex flex-col items-center justify-center p-4 bg-slate-300 rounded-xl shadow hover:shadow-md transition">
+      <div class="card flex flex-col items-center justify-center p-4 bg-blue-600 dark:bg-slate-300 rounded-xl shadow hover:shadow-md transition">
         <div class="bg-gray-100 rounded-xl overflow-hidden w-full">
-          <img src="${personaje.image}" alt="${personaje.name}" class="rounded-xl w-full object-cover" />
+          <img src="${personaje.image}" alt="${personaje.name}" class="rounded-xl w-full object-cover border-4 border-blue-800 dark:border-slate-700" />
         </div>
         <div class="flex flex-col justify-start w-full p-2 gap-1 text-center">
           <h2 class="text-2xl font-bold">${personaje.name}</h2>
-          <p class="text-gray-600">${genero}</p>
+          <p class="text-white dark:text-gray-600">${genero}</p>
           <p class="font-medium">${estado}</p>
         </div>
       </div>
