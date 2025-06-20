@@ -1,12 +1,12 @@
 <!DOCTYPE html>
- 
+
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="./main.js" defer></script>
-    <link rel="stylesheet" href="./output.css">
+    <link rel="stylesheet" href="./output.css" />
     <title>Rick & Morty</title>
     <style>
       @keyframes bump {
@@ -25,23 +25,18 @@
         animation: bump 300ms ease;
       }
     </style>
-</head>
+  </head>
 
-<body class="h-screen bg-slate-900">
+  <body class="h-screen bg-slate-900">
     <header class="flex justify-between items-center bg-green-700 p-4 text-white relative">
       <div id="logo" class="flex items-center">
         <img
           src="./imagenes/riki 2.jpg"
           alt="Rick and Morty Logo"
-          class="w-16 h-16 rounded-full object-cover"
-        />
+          class="w-16 h-16 rounded-full object-cover" />
       </div>
       <div>
-        <img 
-          src="./imagenes/riki.jpg"
-          alt="Rick and Morty Title"
-          class="h-14"
-        />
+        <img src="./imagenes/riki.jpg" alt="Rick and Morty Title" class="h-14" />
       </div>
       <div class="relative">
         <div id="boton-drop" class="cursor-pointer">
@@ -51,24 +46,20 @@
             viewBox="0 0 24 24"
             stroke-width="1.5"
             stroke="currentColor"
-            class="w-11 h-11"
-          >
+            class="w-11 h-11">
             <path
               stroke-linecap="round"
               stroke-linejoin="round"
-              d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-            />
+              d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
           </svg>
         </div>
         <div
           id="dropdown"
-          class="z-10 hidden absolute right-0 mt-2 w-44 bg-white rounded-lg shadow-lg divide-y divide-gray-100 dark:bg-gray-700"
-        >
+          class="z-10 hidden absolute right-0 mt-2 w-44 bg-white rounded-lg shadow-lg divide-y divide-gray-100 dark:bg-gray-700">
           <ul
             class="py-2 text-sm text-gray-700 dark:text-gray-200"
             aria-labelledby="dropdownDefaultButton"
-            id="listado-clases"
-          >
+            id="listado-clases">
             <li>
               <a
                 href="#"
@@ -101,64 +92,120 @@
         </div>
       </div>
     </header>
-    <div>
-        <img src="https://wallpapercat.com/w/full/1/f/5/46701-3840x2160-desktop-4k-rick-and-morty-background-image.jpg" alt="">
-    </div>
-    <main class="w-full flex items-center justify-center">
-        <section class="w-[85%] bg-slate-800 rounded-xl flex flex-col items-center justify-center m-5 p-3">
-            <!-- TITULO -->
-            <h3 class="text-xl md:text-2xl text-center font-bold uppercase text-slate-100 p-5">Listado de Todos los Personajes</h3>
-            <!-- Personajes -->
-            <div id="contenedor-cards" class="w-[90%] flex flex-col items-center justify-center md:flex-row md:flex-wrap m-5 gap-3">
-                <article class="flex flex-col sm:flex-row text-slate-100 bg-slate-700 rounded-md m-3 shadow-xl/50 md:w-100">
-                    <div class="flex items-center justify-center md:h-50">
-                        <img src="https://m.media-amazon.com/images/S/aplus-media-library-service-media/365e5edb-7b7f-415a-81c7-a848936e9e38.__CR0,0,300,300_PT0_SX300_V1___.jpg" alt="Imagen del Articulo" class="w-full h-full md:max-w-50 md:max-h-50 object-cover rounded-md">
-                    </div>
-                    <div class="flex flex-col p-2 gap-1">
-                        <h2 class="text-2xl font-extrabold text-slate-100 hover:text-orange-500 bg-clip-text hover:drop-shadow-[0_0_30px_orange] pb-2">Nombre:</h2>
-                        <p class="font-medium text-slate-300">Estado:</p>
-                        <p class="font-medium text-slate-300">Primera ecena en:</p>
-                    </div>
-                </article>
-                <article class="flex flex-col sm:flex-row text-slate-100 bg-slate-700 rounded-md m-3 shadow-xl/50 md:w-100">
-                    <div class="flex items-center justify-center md:h-50">
-                        <img src="https://m.media-amazon.com/images/S/aplus-media-library-service-media/365e5edb-7b7f-415a-81c7-a848936e9e38.__CR0,0,300,300_PT0_SX300_V1___.jpg" alt="Imagen del Articulo" class="w-full h-full md:max-w-50 md:max-h-50 object-cover rounded-md">
-                    </div>
-                    <div class="flex flex-col p-2 gap-1">
-                        <h2 class="text-2xl font-extrabold text-slate-100 hover:text-orange-500 bg-clip-text hover:drop-shadow-[0_0_30px_orange] pb-2">Nombre:</h2>
-                        <p class="font-medium text-slate-300">Estado:</p>
-                        <p class="font-medium text-slate-300">Primera ecena en:</p>
-                    </div>
-                </article>
-                <article class="flex flex-col sm:flex-row text-slate-100 bg-slate-700 rounded-md m-3 shadow-xl/50 md:w-100">
-                    <div class="flex items-center justify-center md:h-50">
-                        <img src="https://m.media-amazon.com/images/S/aplus-media-library-service-media/365e5edb-7b7f-415a-81c7-a848936e9e38.__CR0,0,300,300_PT0_SX300_V1___.jpg" alt="Imagen del Articulo" class="w-full h-full md:max-w-50 md:max-h-50 object-cover rounded-md">
-                    </div>
-                    <div class="flex flex-col p-2 gap-1">
-                        <h2 class="text-2xl font-extrabold text-slate-100 hover:text-orange-500 bg-clip-text hover:drop-shadow-[0_0_30px_orange] pb-2">Nombre:</h2>
-                        <p class="font-medium text-slate-300">Estado:</p>
-                        <p class="font-medium text-slate-300">Primera ecena en:</p>
-                    </div>
-                </article>
-                <article class="flex flex-col sm:flex-row text-slate-100 bg-slate-700 rounded-md m-3 shadow-xl/50 md:w-100">
-                    <div class="flex items-center justify-center md:h-50">
-                        <img src="https://m.media-amazon.com/images/S/aplus-media-library-service-media/365e5edb-7b7f-415a-81c7-a848936e9e38.__CR0,0,300,300_PT0_SX300_V1___.jpg" alt="Imagen del Articulo" class="w-full h-full md:max-w-50 md:max-h-50 object-cover rounded-md">
-                    </div>
-                    <div class="flex flex-col p-2 gap-1">
-                        <h2 class="text-2xl font-extrabold text-slate-100 hover:text-orange-500 bg-clip-text hover:drop-shadow-[0_0_30px_orange] pb-2">Nombre:</h2>
-                        <p class="font-medium text-slate-300">Estado:</p>
-                        <p class="font-medium text-slate-300">Primera ecena en:</p>
-                    </div>
-                </article>
-                
-            </div>
-            <!-- Botones de siguiente y atras -->
-            <div class="w-full flex justify-between items-center text-slate-200">
-                <button id="ant" class="text-sm bg-indigo-900 rounded-sm p-1 px-3 shadow-xl/30">Atras</button>
-                <button id="sig" class="text-sm bg-indigo-900 rounded-sm p-1 px-3 shadow-xl/30">Siguiente</button>
-            </div>
-        </section>
-    </main>
-</body>
+    img
+    <header
+      class="relative w-full h-[500px] bg-cover bg-center bg-fixed"
+      style="background-image: url('./WhatsApp\ Image\ 2025-06-20\ at\ 2.11.03\ PM\ \(1\).jpeg')">
+      <div class="absolute inset-0 bg-[#1f07f5] bg-opacity-100 mix-blend-overlay z-10"></div>
 
+      <div
+        class="relative z-20 h-full flex flex-col items-center justify-center text-center text-white px-4 shadow-2xl">
+        <h1 class="text-5xl font-bold drop-shadow-md">Rick y Morty - Dimensiones Caóticas</h1>
+        <p class="mt-4 text-lg max-w-xl drop-shadow-sm">
+          Acompaña a Rick y Morty en sus aventuras interdimensionales llenas de ciencia loca,
+          peligros galácticos y humor fuera de este mundo.
+        </p>
+      </div>
+
+      <div class="absolute bottom-0 w-full h-[180px] overflow-hidden z-10">
+        <svg class="w-full h-full" viewBox="0 0 1440 320" preserveAspectRatio="none">
+          <path
+            fill="white"
+            fill-opacity="0.3"
+            d="M0,256L60,229.3C120,203,240,149,360,144C480,139,600,181,720,197.3C840,213,960,203,1080,186.7C1200,171,1320,149,1380,138.7L1440,128V320H1380C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320H0Z"></path>
+        </svg>
+      </div>
+    </header>
+    <main class="w-full flex items-center justify-center">
+      <section
+        class="w-[85%] bg-slate-800 rounded-xl flex flex-col items-center justify-center m-5 p-3">
+        <!-- TITULO -->
+        <h3 class="text-xl md:text-2xl text-center font-bold uppercase text-slate-100 p-5">
+          Listado de Todos los Personajes
+        </h3>
+        <!-- Personajes -->
+        <div
+          id="contenedor-cards"
+          class="w-[90%] flex flex-col items-center justify-center md:flex-row md:flex-wrap m-5 gap-3">
+          <article
+            class="flex flex-col sm:flex-row text-slate-100 bg-slate-700 rounded-md m-3 shadow-xl/50 md:w-100">
+            <div class="flex items-center justify-center md:h-50">
+              <img
+                src="https://m.media-amazon.com/images/S/aplus-media-library-service-media/365e5edb-7b7f-415a-81c7-a848936e9e38.__CR0,0,300,300_PT0_SX300_V1___.jpg"
+                alt="Imagen del Articulo"
+                class="w-full h-full md:max-w-50 md:max-h-50 object-cover rounded-md" />
+            </div>
+            <div class="flex flex-col p-2 gap-1">
+              <h2
+                class="text-2xl font-extrabold text-slate-100 hover:text-orange-500 bg-clip-text hover:drop-shadow-[0_0_30px_orange] pb-2">
+                Nombre:
+              </h2>
+              <p class="font-medium text-slate-300">Estado:</p>
+              <p class="font-medium text-slate-300">Primera ecena en:</p>
+            </div>
+          </article>
+          <article
+            class="flex flex-col sm:flex-row text-slate-100 bg-slate-700 rounded-md m-3 shadow-xl/50 md:w-100">
+            <div class="flex items-center justify-center md:h-50">
+              <img
+                src="https://m.media-amazon.com/images/S/aplus-media-library-service-media/365e5edb-7b7f-415a-81c7-a848936e9e38.__CR0,0,300,300_PT0_SX300_V1___.jpg"
+                alt="Imagen del Articulo"
+                class="w-full h-full md:max-w-50 md:max-h-50 object-cover rounded-md" />
+            </div>
+            <div class="flex flex-col p-2 gap-1">
+              <h2
+                class="text-2xl font-extrabold text-slate-100 hover:text-orange-500 bg-clip-text hover:drop-shadow-[0_0_30px_orange] pb-2">
+                Nombre:
+              </h2>
+              <p class="font-medium text-slate-300">Estado:</p>
+              <p class="font-medium text-slate-300">Primera ecena en:</p>
+            </div>
+          </article>
+          <article
+            class="flex flex-col sm:flex-row text-slate-100 bg-slate-700 rounded-md m-3 shadow-xl/50 md:w-100">
+            <div class="flex items-center justify-center md:h-50">
+              <img
+                src="https://m.media-amazon.com/images/S/aplus-media-library-service-media/365e5edb-7b7f-415a-81c7-a848936e9e38.__CR0,0,300,300_PT0_SX300_V1___.jpg"
+                alt="Imagen del Articulo"
+                class="w-full h-full md:max-w-50 md:max-h-50 object-cover rounded-md" />
+            </div>
+            <div class="flex flex-col p-2 gap-1">
+              <h2
+                class="text-2xl font-extrabold text-slate-100 hover:text-orange-500 bg-clip-text hover:drop-shadow-[0_0_30px_orange] pb-2">
+                Nombre:
+              </h2>
+              <p class="font-medium text-slate-300">Estado:</p>
+              <p class="font-medium text-slate-300">Primera ecena en:</p>
+            </div>
+          </article>
+          <article
+            class="flex flex-col sm:flex-row text-slate-100 bg-slate-700 rounded-md m-3 shadow-xl/50 md:w-100">
+            <div class="flex items-center justify-center md:h-50">
+              <img
+                src="https://m.media-amazon.com/images/S/aplus-media-library-service-media/365e5edb-7b7f-415a-81c7-a848936e9e38.__CR0,0,300,300_PT0_SX300_V1___.jpg"
+                alt="Imagen del Articulo"
+                class="w-full h-full md:max-w-50 md:max-h-50 object-cover rounded-md" />
+            </div>
+            <div class="flex flex-col p-2 gap-1">
+              <h2
+                class="text-2xl font-extrabold text-slate-100 hover:text-orange-500 bg-clip-text hover:drop-shadow-[0_0_30px_orange] pb-2">
+                Nombre:
+              </h2>
+              <p class="font-medium text-slate-300">Estado:</p>
+              <p class="font-medium text-slate-300">Primera ecena en:</p>
+            </div>
+          </article>
+        </div>
+        <!-- Botones de siguiente y atras -->
+        <div class="w-full flex justify-between items-center text-slate-200">
+          <button id="ant" class="text-sm bg-indigo-900 rounded-sm p-1 px-3 shadow-xl/30">
+            Atras
+          </button>
+          <button id="sig" class="text-sm bg-indigo-900 rounded-sm p-1 px-3 shadow-xl/30">
+            Siguiente
+          </button>
+        </div>
+      </section>
+    </main>
+  </body>
 </html>
