@@ -2,6 +2,7 @@ let contenedor = document.querySelector("#contenedor-cards");
 let sig = document.querySelector("#sig");
 let ant = document.querySelector("#ant");
 let pagina = 1;
+let filtrosActivos = {};
 
 async function traerPersonajes(pagina) {
   contenedor.innerHTML = "";
@@ -16,11 +17,9 @@ async function traerPersonajes(pagina) {
 
 function renderizarPersonajes(personajes) {
   contenedor.innerHTML = "";
- personajes.slice(0, 6).forEach((personaje) => {
+  personajes.forEach((personaje) => {
     let genero = traducirGenero(personaje.gender);
-    let estado = personaje.status === "Dead" ? " Muertito" :
-                 personaje.status === "Alive" ? "vivo agunta todavia" :
-                 " Desconocido";
+    let estado = personaje.status === "Dead" ? "Muertito" : personaje.status === "Alive" ? "Vivo" : "Desconocido";
 
     contenedor.innerHTML += `
       <div class="card flex flex-col items-center justify-center p-4 bg-slate-300 rounded-xl shadow hover:shadow-md transition">
@@ -28,7 +27,7 @@ function renderizarPersonajes(personajes) {
           <img src="${personaje.image}" alt="${personaje.name}" class="rounded-xl w-full object-cover" />
         </div>
         <div class="flex flex-col justify-start w-full p-2 gap-1 text-center">
-          <h2 class="text-2xl font-bold">${personaje.name}</h2>
+          <p class="text-sm text-gray-500">ID: ${personaje.id}</p>
           <p class="text-gray-600">${genero}</p>
           <p class="font-medium">${estado}</p>
         </div>
@@ -57,4 +56,62 @@ ant.addEventListener("click", function () {
     traerPersonajes(pagina);
   }
 });
+
+document.querySelector("#boton-drop").addEventListener("click", () => {
+  document.querySelector("#dropdown").classList.toggle("hidden");
+});
+
+//mi dropdown
+const filtrosMenu = document.querySelector("#listado-clases");
+const filtros = {
+  status: ["alive", "dead", "unknown"],
+  species: ["human", "alien", "robot"],
+  gender: ["male", "female", "genderless"],
+};
+
+filtrosMenu.innerHTML = "";
+
+Object.entries(filtros).forEach(([tipo, valores]) => {
+  filtrosMenu.innerHTML += `<li class='px-4 py-2 font-bold uppercase text-xs'>${tipo}</li>`;
+  valores.forEach((valor) => {
+    filtrosMenu.innerHTML += `
+      <li>
+        <button data-filtro="${tipo}" data-valor="${valor}" class="filtro-btn block w-full text-left px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white capitalize">
+          ${valor}
+        </button>
+      </li>
+    `;
+  });
+});
+
+filtrosMenu.addEventListener("click", (e) => {
+  if (e.target.classList.contains("filtro-btn")) {
+    const tipo = e.target.dataset.filtro;
+    const valor = e.target.dataset.valor;
+
+   filtrosActivos[tipo] = valor;
+
+    aplicarFiltros();
+
+    document.querySelector("#dropdown").classList.add("hidden");
+  }
+});
+
+async function aplicarFiltros() {
+  contenedor.innerHTML = "<p class='text-center text-slate-400'>Cargando personajes filtrados...</p>";
+
+  let url = "https://rickandmortyapi.com/api/character/?";
+
+  for (const [clave, valor] of Object.entries(filtrosActivos)) {
+    url += `${clave}=${valor}&`;
+  }
+
+  try {
+    const { data } = await axios.get(url);
+    renderizarPersonajes(data.results);
+  } catch (error) {
+    contenedor.innerHTML = `<p class='text-center text-red-400'>No se encontraron personajes con los filtros aplicados.</p>`;
+  }
+}
+
 traerPersonajes(pagina);
