@@ -1,12 +1,53 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./output.css">
-    <title>Rick & Morty</title>
-</head>
-<body>
-    <h1>Hola mundo</h1>
-</body>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./main.js" defer></script>
+    <link rel="stylesheet" href="./output.css" />
+     <script src="https://cdn.tailwindcss.com"></script>
+    <title>Rick and Morty App</title>
+    <style>
+      @keyframes bump {
+        0% {
+          transform: translateY(0) scale(1);
+        }
+        30% {
+          transform: translateY(-6px) scale(1.05);
+        }
+        100% {
+          transform: translateY(0) scale(1);
+        }
+      }
+
+      .card:hover {
+        animation: bump 300ms ease;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="bg-slate-100 px-4 py-10 md:px-10 min-h-screen">
+      <div
+        id="contenedor-cards"
+        class="grid gap-6 p-4 bg-white rounded-2xl shadow-md sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
+      >
+      </div>
+
+      <div class="flex justify-center gap-4 mt-8">
+        <button
+          id="ant"
+          class="bg-red-500 hover:bg-red-600 px-6 py-2 rounded-xl text-white font-semibold transition"
+        >
+          Anterior
+        </button>
+        <button
+          id="sig"
+          class="bg-blue-600 hover:bg-blue-700 px-6 py-2 rounded-xl text-white font-semibold transition"
+        >
+          Siguiente
+        </button>
+      </div>
+    </main>
+  </body>
 </html>
