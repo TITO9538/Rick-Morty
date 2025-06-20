@@ -26,7 +26,81 @@
       }
     </style>
 </head>
+
 <body class="h-screen bg-slate-900">
+    <header class="flex justify-between items-center bg-green-700 p-4 text-white relative">
+      <div id="logo" class="flex items-center">
+        <img
+          src="./imagenes/riki 2.jpg"
+          alt="Rick and Morty Logo"
+          class="w-16 h-16 rounded-full object-cover"
+        />
+      </div>
+      <div>
+        <img 
+          src="./imagenes/riki.jpg"
+          alt="Rick and Morty Title"
+          class="h-14"
+        />
+      </div>
+      <div class="relative">
+        <div id="boton-drop" class="cursor-pointer">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="w-11 h-11"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+            />
+          </svg>
+        </div>
+        <div
+          id="dropdown"
+          class="z-10 hidden absolute right-0 mt-2 w-44 bg-white rounded-lg shadow-lg divide-y divide-gray-100 dark:bg-gray-700"
+        >
+          <ul
+            class="py-2 text-sm text-gray-700 dark:text-gray-200"
+            aria-labelledby="dropdownDefaultButton"
+            id="listado-clases"
+          >
+            <li>
+              <a
+                href="#"
+                class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                >Dashboard</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                >Settings</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                >Earnings</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                >Sign out</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
     <main class="w-full flex items-center justify-center">
         <section class="w-[85%] bg-slate-800 rounded-xl flex flex-col items-center justify-center m-5 p-3">
             <!-- TITULO -->
