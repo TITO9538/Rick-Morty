@@ -1,10 +1,30 @@
 <!DOCTYPE html>
+ 
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./main.js" defer></script>
     <link rel="stylesheet" href="./output.css">
     <title>Rick & Morty</title>
+    <style>
+      @keyframes bump {
+        0% {
+          transform: translateY(0) scale(1);
+        }
+        30% {
+          transform: translateY(-6px) scale(1.05);
+        }
+        100% {
+          transform: translateY(0) scale(1);
+        }
+      }
+
+      .card:hover {
+        animation: bump 300ms ease;
+      }
+    </style>
 </head>
 <body class="h-screen bg-slate-900">
     <main class="w-full flex items-center justify-center">
@@ -12,7 +32,7 @@
             <!-- TITULO -->
             <h3 class="text-xl md:text-2xl text-center font-bold uppercase text-slate-100 p-5">Listado de Todos los Personajes</h3>
             <!-- Personajes -->
-            <div class="w-[90%] flex flex-col items-center justify-center md:flex-row md:flex-wrap m-5 gap-3">
+            <div id="contenedor-cards" class="w-[90%] flex flex-col items-center justify-center md:flex-row md:flex-wrap m-5 gap-3">
                 <article class="flex flex-col sm:flex-row text-slate-100 bg-slate-700 rounded-md m-3 shadow-xl/50 md:w-100">
                     <div class="flex items-center justify-center md:h-50">
                         <img src="https://m.media-amazon.com/images/S/aplus-media-library-service-media/365e5edb-7b7f-415a-81c7-a848936e9e38.__CR0,0,300,300_PT0_SX300_V1___.jpg" alt="Imagen del Articulo" class="w-full h-full md:max-w-50 md:max-h-50 object-cover rounded-md">
@@ -57,10 +77,11 @@
             </div>
             <!-- Botones de siguiente y atras -->
             <div class="w-full flex justify-between items-center text-slate-200">
-                <button class="text-sm bg-indigo-900 rounded-sm p-1 px-3 shadow-xl/30">Atras</button>
-                <button class="text-sm bg-indigo-900 rounded-sm p-1 px-3 shadow-xl/30">Siguiente</button>
+                <button id="ant" class="text-sm bg-indigo-900 rounded-sm p-1 px-3 shadow-xl/30">Atras</button>
+                <button id="sig" class="text-sm bg-indigo-900 rounded-sm p-1 px-3 shadow-xl/30">Siguiente</button>
             </div>
         </section>
     </main>
 </body>
+
 </html>
